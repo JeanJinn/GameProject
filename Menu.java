@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends World
 {
-
+    Actor help = new help();
+    
     /**
      * Constructor for objects of class Interface.
      * 
@@ -18,6 +19,11 @@ public class Menu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1400, 876, 1);
         addObject(new name(), 700, 206);
-        addObject(new start(), 700, 585);
+        addObject(new start(), 700, 550);
+        addObject(help, 700, 680);
+    }
+    
+    public void removeHelp() {
+        removeObject(help);
     }
 }
