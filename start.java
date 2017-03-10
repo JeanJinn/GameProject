@@ -15,11 +15,12 @@ public class start extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){
-            
+            ((Menu)getWorld()).removeHelp();
             for(int i=0; i<3 ; i++){
                 getWorld().addObject(new Lbutton(i), 700, (i+3)*150);
             }
             getWorld().removeObject(this);
+            Greenfoot.delay(20);
         }
     }    
 }
