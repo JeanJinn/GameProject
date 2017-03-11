@@ -26,4 +26,8 @@ public class Menu extends World
     public void removeHelp() {
         removeObject(help);
     }
+    
+    public void started(){
+        Greenfoot.playSound("A Golden Star Is Born.mp3");
+    }
 }
