@@ -14,7 +14,10 @@ public class help extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("buttonclick.mp3");
+            getWorld().addObject(new howto(), 700, 438);
+            getWorld().addObject(new CloseButton(), 1045, 215);
+        }
     }    
 }
