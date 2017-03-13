@@ -16,7 +16,8 @@ public class start extends Actor
     {
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("buttonclick.mp3");
-            ((Menu)getWorld()).removeHelp();
+            Menu world = (Menu)getWorld();
+            world.removeHelp();
             for(int i=0; i<3 ; i++){
                 getWorld().addObject(new Lbutton(i), 700, (i+3)*150);
             }
