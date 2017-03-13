@@ -23,7 +23,7 @@ public class Word extends Actor
     
     @Override
     public void addedToWorld(World world) {
-        speed = 5 + 2 * ((Game)world).getDiff();
+        speed = 1 + 2 * ((Game)world).getDiff();
     }
     
     /**
@@ -40,8 +40,8 @@ public class Word extends Actor
     
     public void checkEdge() {
         if(getY() >= 700) {
-            getWorld().removeObject(this);
-            //getWorld().gameover();
+            ((Game)getWorld()).gameover();
+            getWorld().removeObject(this);            
         }
     }
     
