@@ -13,6 +13,7 @@ public class Game extends World
     private static List<String> allowedKeys = new ArrayList<>();
     private Input input = new Input();
     private ScoreDisplay scoreDisplay = new ScoreDisplay();
+    private boolean check = false;
     
     static {
         for(char c = 'a'; c <= 'z'; c++)
@@ -34,11 +35,13 @@ public class Game extends World
         super(1400, 876, 1);
         this.diff = diff;
         addObject(new Junimo(), 700, 750);
+        addObject(new Restart(), 1335, 70);
         addObject(input, 700, 50);
         addObject(scoreDisplay, 940, 800);
     }
     
     public void act() {
+        if(check) return;
         if(timer.millisElapsed() >= (4000 - (1000 * diff))) {
             addObject(new Word(), 200 + Greenfoot.getRandomNumber(1000), 0);
             timer.mark();
@@ -64,6 +67,16 @@ public class Game extends World
     
     public int getDiff() {
         return diff;
+    }
+    
+    public void gameover(){
+        Greenfoot.delay(10);
+        addObject(new ScoreBoard(scoreDisplay.getValue()), 700, 438);
+        addObject(new Bbutton(), 330, 640);
+        check = true;
+    }
+    public void stopped(){
+        Menu.bgm.pause();
     }
     
 }
