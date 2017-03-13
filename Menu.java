@@ -10,6 +10,7 @@ public class Menu extends World
 {
     Actor help = new help();
     
+    public static GreenfootSound bgm = new GreenfootSound("A Golden Star Is Born.mp3");
     /**
      * Constructor for objects of class Interface.
      * 
@@ -28,6 +29,9 @@ public class Menu extends World
     }
     
     public void started(){
-        Greenfoot.playSound("A Golden Star Is Born.mp3");
+        bgm.play();
+    }
+    public void stopped(){
+        bgm.pause();
     }
 }
