@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ScoreDisplay extends Actor
 {
     int value;
-    
     public ScoreDisplay() {
         this(0);
     }
@@ -40,4 +39,5 @@ public class ScoreDisplay extends Actor
     public void updateImage() {
         setImage(ImageConstructor.create(String.format("%05d", value)));
     }
+    
 }
