@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
@@ -36,6 +37,7 @@ public class Game extends World
         this.diff = diff;
         addObject(new Junimo(), 700, 750);
         addObject(new Restart(), 1335, 70);
+        addObject(new Bbutton(), 1200, 70);
         addObject(input, 700, 50);
         addObject(scoreDisplay, 940, 800);
     }
@@ -72,7 +74,6 @@ public class Game extends World
     public void gameover(){
         Greenfoot.delay(10);
         addObject(new ScoreBoard(scoreDisplay.getValue()), 700, 438);
-        addObject(new Bbutton(), 330, 640);
         check = true;
     }
     public void stopped(){
