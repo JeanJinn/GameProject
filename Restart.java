@@ -15,6 +15,7 @@ public class Restart extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("buttonclick.mp3");
             Greenfoot.setWorld(new Game());
         }
     }    
