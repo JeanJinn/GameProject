@@ -23,7 +23,7 @@ public class Word extends Actor
     
     @Override
     public void addedToWorld(World world) {
-        speed = 1 + 2 * ((Game)world).getDiff();
+        speed = 2 + 2 * ((Game)world).getDiff();
     }
     
     /**
