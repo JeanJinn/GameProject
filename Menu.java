@@ -29,7 +29,7 @@ public class Menu extends World
     }
     
     public void started(){
-        bgm.play();
+        bgm.playLoop();
     }
     public void stopped(){
         bgm.pause();
