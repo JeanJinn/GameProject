@@ -40,7 +40,7 @@ public class Word extends Actor
     
     public void checkEdge() {
         if(getY() >= 700) {
-            ((Game)getWorld()).gameover();
+            ((Game)getWorld()).removerHeart();
             getWorld().removeObject(this);            
         }
     }
