@@ -15,6 +15,7 @@ public class Game extends World
     private Input input = new Input();
     private ScoreDisplay scoreDisplay = new ScoreDisplay();
     private boolean check = false;
+    Queue<Heart> list = new LinkedList<>();
     
     static {
         for(char c = 'a'; c <= 'z'; c++)
@@ -36,12 +37,28 @@ public class Game extends World
         super(1400, 876, 1);
         this.diff = diff;
         addObject(new Junimo(), 700, 750);
-        addObject(new Restart(), 1335, 70);
-        addObject(new Bbutton(), 1200, 70);
+        addObject(new Restart(), 220, 70);
+        addObject(new Bbutton(), 80, 70);
         addObject(input, 700, 50);
         addObject(scoreDisplay, 940, 800);
+        int x = 1170;
+        int y = 40;
+        int offset = 90;
+        for(int i = 0; i<3 ; ++i){
+            Heart h = new Heart();
+            list.add(h);
+            addObject(h, x + offset*i, y);
+        }
     }
     
+    public void removerHeart(){
+        if(list.peek() == null){
+            gameover();
+        }else{
+            Greenfoot.playSound("downlife.wav");
+            removeObject(list.poll());
+        }
+    }
     public void act() {
         if(check) return;
         if(timer.millisElapsed() >= (4000 - (1000 * diff))) {
