@@ -30,7 +30,7 @@ public class help extends Actor
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("buttonclick.mp3");
             getWorld().addObject(new howto(), 700, 438);
-            getWorld().addObject(new CloseButton(), 1045, 215);
+            getWorld().addObject(new CloseButton(), 1345, 52);
         }
     }    
 }
