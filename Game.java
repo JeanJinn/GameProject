@@ -90,7 +90,10 @@ public class Game extends World
     
     public void gameover(){
         Greenfoot.delay(10);
-        addObject(new ScoreBoard(scoreDisplay.getValue()), 700, 438);
+        World end = new end();
+        end.addObject(new ScoreBoard(scoreDisplay.getValue()), 700, 438);
+        end.addObject(new Bbutton(), 90, 800);
+        Greenfoot.setWorld(end);
         check = true;
     }
     public void stopped(){
