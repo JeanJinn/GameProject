@@ -10,7 +10,6 @@ public class Word extends Actor
 {
     public String data;
     public int speed = 0;
-    
     public Word(){
         this(Words.getRandomWord());
     }
@@ -39,10 +38,16 @@ public class Word extends Actor
     }    
     
     public void checkEdge() {
-        if(getY() >= 700) {
+        if(getY() == 700) {
             ((Game)getWorld()).removerHeart();
             getWorld().removeObject(this);            
         }
+    }
+    
+    public boolean chk(){
+        if(getY() == 700) 
+            return true;          
+        else return false;
     }
     
     public String getData() {

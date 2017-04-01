@@ -16,7 +16,6 @@ public class Junimo extends Actor
     public Junimo()
     {
         gif = new GifImage("junimo.gif");
-        setImage(gif.getCurrentImage());
     }
     public void act()
     {

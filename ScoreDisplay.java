@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ScoreDisplay extends Actor
 {
     int value;
+    public static int max = 0;
     public ScoreDisplay() {
         this(0);
     }
@@ -34,6 +35,13 @@ public class ScoreDisplay extends Actor
     
     public int getValue() {
         return value;
+    }
+    
+    public int chkMax(){
+        if(max<value){
+            max=value;
+        }
+        return max;
     }
     
     public void updateImage() {

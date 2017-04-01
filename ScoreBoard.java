@@ -1,6 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 
-
 import java.util.Calendar;
 
 /**
@@ -21,34 +20,33 @@ public class ScoreBoard extends Actor
      */
     public ScoreBoard()
     {
-        this(100);
+        this(0,0);
     }
 
     /**
      * Create a score board for the final result.
      */
-    public ScoreBoard(int score)
+    public ScoreBoard(int score,int maxScore)
     {
-        makeImage("Game Over", "Score: ", score);
+        makeImage("Game Over", "Score : ", score,maxScore);
     }
 
     /**
      * Make the score board image.
      */
-    private void makeImage(String title, String prefix, int score)
+    private void makeImage(String title, String prefix, int score,int maxScore)
     {
         GreenfootImage image = new GreenfootImage(WIDTH, HEIGHT);
 
-        image.setColor(new Color(255,255,255, 128));
+        image.setColor(Color.BLACK);
         image.fillRect(0, 0, WIDTH, HEIGHT);
-        image.setColor(new Color(0, 0, 0, 128));
-        image.fillRect(5, 5, WIDTH-10, HEIGHT-10);
         Font font = image.getFont();
-        font = font.deriveFont(FONT_SIZE);
-        image.setFont(font);
         image.setColor(Color.WHITE);
-        image.drawString(title, 220, 250);
-        image.drawString(prefix + score, 220, 350);
+        image.setFont(new Font("Sabo Filled", 50));
+        
+        image.drawString(title, 300, 150);
+        image.drawString(prefix + score, 325, 300);
+        image.drawString("Max score : " +  maxScore, 245, 450);
         setImage(image);
     }
 }

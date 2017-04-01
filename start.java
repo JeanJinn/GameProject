@@ -13,7 +13,6 @@ public class start extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     boolean mouseOver = false;
-    
     public void act() 
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();  
@@ -33,6 +32,7 @@ public class start extends Actor
             Greenfoot.playSound("buttonclick.mp3");
             Menu world = (Menu)getWorld();
             world.removeHelp();
+            world.removeReset();
             for(int i=0; i<3 ; i++){
                 getWorld().addObject(new Lbutton(i), 700, (i+3)*150);
             }

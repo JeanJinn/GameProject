@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Menu extends World
 {
     Actor help = new help();
-    
+    Actor reset = new ResetMaxScore();
     public static GreenfootSound bgm = new GreenfootSound("A Golden Star Is Born.mp3");
     /**
      * Constructor for objects of class Interface.
@@ -22,10 +22,15 @@ public class Menu extends World
         addObject(new name(), 700, 206);
         addObject(new start(), 700, 550);
         addObject(help, 700, 680);
+        addObject(reset, 700,813);
     }
     
     public void removeHelp() {
         removeObject(help);
+    }
+    
+    public void removeReset() {
+        removeObject(reset);
     }
     
     public void started(){

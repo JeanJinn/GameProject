@@ -16,7 +16,6 @@ public class Game extends World
     private ScoreDisplay scoreDisplay = new ScoreDisplay();
     private boolean check = false;
     Queue<Heart> list = new LinkedList<>();
-    
     static {
         for(char c = 'a'; c <= 'z'; c++)
             allowedKeys.add(c + "");
@@ -68,6 +67,7 @@ public class Game extends World
         String key = Greenfoot.getKey();
         if(key != null && !key.isEmpty()) {
             if(allowedKeys.contains(key)) {
+               Greenfoot.playSound("key.wav");
                 input.setWord(input.getWord() + key);
             } else if(key.equals("backspace") && !input.getWord().isEmpty()) {
                 input.setWord(input.getWord().substring(0, input.getWord().length()-1));
@@ -77,6 +77,7 @@ public class Game extends World
                     if(e.getData().equals(input.getWord())) {
                         this.removeObject(e);
                         scoreDisplay.add(input.getWord().length() * (diff+1));
+                        Greenfoot.playSound("correctt.wav");
                     }
                 });
                 input.setWord("");
@@ -89,9 +90,9 @@ public class Game extends World
     }
     
     public void gameover(){
-        Greenfoot.delay(10);
         World end = new end();
-        end.addObject(new ScoreBoard(scoreDisplay.getValue()), 700, 438);
+        end.addObject(new ScoreBoard(scoreDisplay.getValue(),scoreDisplay.chkMax()),getWidth()/2,
+        getHeight()/2);
         end.addObject(new Bbutton(), 90, 800);
         Greenfoot.setWorld(end);
         check = true;
