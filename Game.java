@@ -79,6 +79,9 @@ public class Game extends World
                         scoreDisplay.add(input.getWord().length() * (diff+1));
                         Greenfoot.playSound("correctt.wav");
                     }
+                    else if(!e.getData().equals(input.getWord())){
+                         Greenfoot.playSound("wrong.wav");
+                    }
                 });
                 input.setWord("");
             }
