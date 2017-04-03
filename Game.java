@@ -100,6 +100,9 @@ public class Game extends World
         Greenfoot.setWorld(end);
         check = true;
     }
+    public void started(){
+        Menu.bgm.play();
+    }
     public void stopped(){
         Menu.bgm.pause();
     }
