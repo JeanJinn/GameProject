@@ -28,7 +28,7 @@ public class ScoreBoard extends Actor
      */
     public ScoreBoard(int score,int maxScore)
     {
-        makeImage("Game Over", "Score : ", score,maxScore);
+        makeImage("Game Over", Menu.playerName+" Score : ", score,maxScore);
     }
 
     /**
@@ -44,9 +44,9 @@ public class ScoreBoard extends Actor
         image.setColor(Color.WHITE);
         image.setFont(new Font("Sabo Filled", 50));
         
-        image.drawString(title, 300, 150);
-        image.drawString(prefix + score, 325, 300);
-        image.drawString("Max score : " +  maxScore, 245, 450);
+        image.drawString(title, 330, 150);
+        image.drawString(prefix + score, 270, 300);
+        image.drawString("Max score : " +  maxScore, 270, 450);
         setImage(image);
     }
 }
