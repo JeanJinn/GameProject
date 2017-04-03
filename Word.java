@@ -17,7 +17,6 @@ public class Word extends Actor
     public Word(String data){
         this.data = data;
         setImage(ImageConstructor.create(data));
-        
     }
     
     @Override
@@ -38,17 +37,17 @@ public class Word extends Actor
     }    
     
     public void checkEdge() {
-        if(getY() == 700) {
+        if(getY() >= 700) {
             ((Game)getWorld()).removerHeart();
             getWorld().removeObject(this);            
         }
     }
     
-    public boolean chk(){
+    /*public boolean chk(){
         if(getY() == 700) 
             return true;          
         else return false;
-    }
+    }*/
     
     public String getData() {
         return data;
