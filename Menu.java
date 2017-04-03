@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import javax.swing.JOptionPane;
 /**
  * Write a description of class Menu here.
  * 
@@ -11,6 +11,7 @@ public class Menu extends World
     Actor help = new help();
     Actor reset = new ResetMaxScore();
     public static GreenfootSound bgm = new GreenfootSound("A Golden Star Is Born.mp3");
+    static String playerName;
     /**
      * Constructor for objects of class Interface.
      * 
